@@ -8,3 +8,11 @@ def home(request):
 
 def about(request):
 	return render(request,"about.html")	
+
+def adminsign(request):
+    return render(request, "adminsign.html")
+
+def booklistview(request):
+    book_list = bookdetails.objects.all()
+    return render(request, 'booklist.html',{'book_list':book_list})
+

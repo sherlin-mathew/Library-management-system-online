@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body class="main-layout">
+
+    <div class="bs-example">
+       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+          <a href="/" class="navbar-brand">Library Management System</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+ 
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+             <div class="navbar-nav">
+ 
+             </div>
+ 
+             <div class="navbar-nav">
+                <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+                <a href="{% url 'adminsign' %}" class="nav-item nav-link active">Admin</a>
+                <a href="" class="nav-item nav-link">User</a>
+ 
+                <a href="{% url 'about' %}" class="nav-item nav-link ">About Us</a>
+                <a href="{% url 'booklist' %}" class="nav-item nav-link">Our Books</a>
+             </div>
+ 
+ 
+ 
+ 
+          </div>
+       </nav>
+    </div>
+
+<div id="login">
+    <h3 class="text-center text-white pt-5">Admin Sign In</h3>
+    <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <form id="login-form" class="form" action="ad_do_sign_in" method="POST">
+                        {% csrf_token %}
+                        <h3 class="text-center text-info">Admin Sign In</h3>
+                        <div class="form-group">
+                            <label for="username" class="text-info">Email:</label><br>
+                            <input type="email" name="email" id="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="text-info">Password:</label><br>
+                            <input type="password" name="password" id="password" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <a href="" class="text-info float-right">User Login here</a>
+                            <br><br>
+                            <button type="submit" class="btn btn-info">Sign In</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<center>
+    <h4 style="color: red">{{m}}</h4>
+</center>
+
+
+
+ 
+
+
+{% endblock %}
