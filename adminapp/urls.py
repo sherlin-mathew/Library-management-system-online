@@ -7,5 +7,12 @@ path('about',views.about,name='about'),
 path('adminsign',views.adminsign,name='adminsign'),
 path('home',views.home,name='home'),
 path('booklist',views.booklistview,name='booklist'),
+path('ad_do_sign_in',views.ad_do_sign_in),
+path('logoutpage',views.logoutpage,name='logoutpage'),
+path('addbook',views.addbook,name='addbook'),
+
+
+
+
 
 ]

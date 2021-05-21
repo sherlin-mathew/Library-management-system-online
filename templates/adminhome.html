@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+   {% include "adminnavbar.html" %}
+   <head>
+   <style type="text/css">
+      .bs-example{
+          margin: 0px;
+  
+      }
+  .navbar-brand{
+    font-size: 20px;
+    font-family: sans-serif;
+  
+  }
+  .col-lg-6{
+    padding-left: 20%;
+  }
+  .jumbotron{
+    margin-bottom: 0px;
+  }
+  
+  </style>
+  </head>
+   <div class="jumbotron">
+  
+
+      <div class="row">
+    
+        <div class="col-lg-6">
+          <img src="{% static "images/managebook.png" %}" width="50%" height="50%"  alt=""><br><br>
+            <a class="btn btn-primary btn-lg" style="text-align:center" href="" role="button">Manage Books</a>
+    
+        </div>
+    
+        <div class="col-lg-6">
+          <img src="{% static "images/addbook.png" %}" width="50%" height="50%" alt=""><br><br>
+          <a class="btn btn-primary btn-lg" href="" role="button">Add Books</a>
+        </div>
+      </div>
+    <hr class="my-4">
+    
+    </div>
+    
+    
+    
+
+{% endblock %}
