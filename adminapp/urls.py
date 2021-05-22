@@ -9,7 +9,8 @@ path('home',views.home,name='home'),
 path('booklist',views.booklistview,name='booklist'),
 path('ad_do_sign_in',views.ad_do_sign_in),
 path('logoutpage',views.logoutpage,name='logoutpage'),
-path('addbook',views.addbook,name='addbook'),
+path('addbookview',views.addbookview,name='addbookview'),
+path('addbook',views.addbook),
 
 
 

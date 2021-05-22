@@ -1,6 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import bookdetails
 from .models import Administrator
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
+
+
 
 # Create your views here.
 def home(request):
@@ -38,21 +42,24 @@ def ad_do_sign_in(request):
 def logoutpage(request):
 	return render(request, "home.html")
 
+def addbookview(request):
+	return render(request, 'addbook.html')
+
 def addbook(request):
 	if request.method == 'POST':
-		title = request.POST['title']
+		bookname = request.POST['bookname']
 		author = request.POST['author']
 		year = request.POST['year']
 		publisher = request.POST['publisher']
 		pdf = request.FILES['pdf']
-		a = Book(title=title, author=author, year=year, publisher=publisher, 
+		a = bookdetails(bookname=bookname, author=author, year=year, publisher=publisher, 
 			 pdf=pdf)
 		a.save()
 		messages.success(request, 'Book was uploaded successfully')
-		return redirect('albook')
+		return render(request, 'booklistview')
 	else:
 	    messages.error(request, 'Book was not uploaded successfully')
-	    return redirect('aabook_form')
+	    return redirect('addbookview')
 
 
 
