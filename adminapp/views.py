@@ -46,21 +46,22 @@ def addbookview(request):
 	return render(request, 'addbook.html')
 
 def addbook(request):
-	if request.method == 'POST':
-		bookname = request.POST['bookname']
-		author = request.POST['author']
-		year = request.POST['year']
-		publisher = request.POST['publisher']
-		pdf = request.FILES['pdf']
-		a = bookdetails(bookname=bookname, author=author, year=year, publisher=publisher, 
-			 pdf=pdf)
-		a.save()
-		messages.success(request, 'Book was uploaded successfully')
-		return render(request, 'booklistview')
-	else:
-	    messages.error(request, 'Book was not uploaded successfully')
-	    return redirect('addbookview')
+	bookname = request.POST['bookname']
+	author = request.POST['author']
+	year = request.POST['year']
+	publisher = request.POST['publisher']
+	pdf = request.FILES['pdf']
+    
+	a = bookdetails(bookname=bookname, author=author, year=year, publisher=publisher,pdf=pdf)
+	a.save()
+	return render(request, 'addbook.html',{'m': 'Book was uploaded successfully'})
 
+def managebookview(request):
+    book=bookdetails.objects.all()
+    return render(request, 'managebook.html', {'book':book})
 
+def adminview(request):
+    return render(request, 'adminview.html')
 
+	
 
