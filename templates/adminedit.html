@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container p-5">
+  <form action="/updateproduct/{{pro.id}}" method="POST" class="p-5" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class=" col-md-4 mx-auto text-center">Edit Details of Book</h2>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Book Title</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="bookname" value="{{a.bookname}}" placeholder=" Enter Book Title">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Author</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="author" value="{{a.author}}" placeholder="Author of the book">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Publisher</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="publisher" value="{{a.publisher}}" placeholder="Publisher of the book">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Publication Year</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="year" value="{{a.year}}" placeholder="Publication Year of the Book">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">PDF</label>
+      <input type="file" class="form-control" name="pdf" value="{{a.pdf}}" placeholder="Upload PDF"><br>
+      <button type="submit" class="btn btn-primary">Update</button>
+      <a href="{% url 'managebookview' %}"><button type="button" class="btn btn-secondary">Back</button></a>
+    </div>
+</div>
+</form>
+</div>
+</div>
+          
+      
+<center>
+  <h4 style="color: red">{{m}}</h4>
+</center>
+
+{% endblock %}

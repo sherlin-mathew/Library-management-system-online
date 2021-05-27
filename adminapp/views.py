@@ -60,8 +60,9 @@ def managebookview(request):
     book=bookdetails.objects.all()
     return render(request, 'managebook.html', {'book':book})
 
-def adminview(request):
-    return render(request, 'adminview.html')
+def adminedit(request,id):
+    a=bookdetails.objects.get(id=id)
+    return render(request, 'adminedit.html',{'a':'a'},{'m': 'Book was Updated Successfully'})
 
 	
 

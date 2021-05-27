@@ -12,7 +12,7 @@ path('logoutpage',views.logoutpage,name='logoutpage'),
 path('addbookview',views.addbookview,name='addbookview'),
 path('addbook',views.addbook),
 path('managebookview',views.managebookview,name='managebookview'),
-path('adminview/<int:pk>', views.adminview, name='adminview'),
+path('adminedit/<int:id>', views.adminedit, name='adminedit'),
 
 
 

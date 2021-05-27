@@ -57,10 +57,10 @@
                                   <td>{{ i.bookname }}</td>
                                   <td>{{ i.author}}</td>
                                   <td>
-                <a href=""><button type="button" class="btn btn-primary"> View</button></a>
+                <a href="{% url 'booklist' %}"><button type="button" class="btn btn-primary"> View </button></a>
                  </td>
                 <td>
-                <a href=""><button type="button" class="btn btn-warning"> Edit</button></a>
+                <a href="{% url 'adminedit' %"><button type="button" class="btn btn-warning"> Edit</button></a>
         </td>
         <td>
           <a href=""><button type="button" class="btn btn-danger"> Delete</button></a></td>
