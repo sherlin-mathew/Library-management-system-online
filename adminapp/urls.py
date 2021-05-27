@@ -13,6 +13,9 @@ path('addbookview',views.addbookview,name='addbookview'),
 path('addbook',views.addbook),
 path('managebookview',views.managebookview,name='managebookview'),
 path('adminedit/<int:id>', views.adminedit, name='adminedit'),
+path('updatebook/<int:id>', views.updatebook, name='updatebook'),
+path('deletebook/<int:id>', views.deletebook, name='deletebook'),
+
 
 
 

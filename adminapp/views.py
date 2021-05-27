@@ -3,6 +3,7 @@ from .models import bookdetails
 from .models import Administrator
 from django.contrib import messages
 from django.contrib.messages.views import SuccessMessageMixin
+from django.core.files.storage import FileSystemStorage
 
 
 
@@ -62,7 +63,26 @@ def managebookview(request):
 
 def adminedit(request,id):
     a=bookdetails.objects.get(id=id)
-    return render(request, 'adminedit.html',{'a':'a'},{'m': 'Book was Updated Successfully'})
+    return render(request, 'adminedit.html',{'a':'a'})
+
+def updatebook(request,id):
+    bookname = request.POST['bookname']
+    author = request.POST['author']
+    publisher = request.POST['publisher']
+    year = request.POST['year']
+    pdf = request.FILES['pdf']
+    fs = FileSystemStorage()
+    pdf = fs.save(pdf.name,pdf)
+    fileurl = fs.url(pdf)
+    val=bookdetails(bookname=bookname, author=author, publisher=publisher, year=year, pdf=fileurl)
+    val.save()
+    return render(request, 'adminedit.html',{'m' : 'Book was Updated Successfully'})
+
+def deletebook(request,id):
+    book = bookdetails.objects.get(id=id)
+    book.delete()
+    return redirect('managebookview')
+
 
 	
 

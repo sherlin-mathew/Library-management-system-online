@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="container p-5">
-  <form action="/updateproduct/{{pro.id}}" method="POST" class="p-5" enctype="multipart/form-data">
+  <form action="/updatebook/{{a.id}}" method="POST" class="p-5" enctype="multipart/form-data">
     {% csrf_token %}
     <h2 class=" col-md-4 mx-auto text-center">Edit Details of Book</h2>
     <div class="form-group">
