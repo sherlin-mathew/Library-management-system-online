@@ -74,8 +74,7 @@ def updatebook(request,id):
     fs = FileSystemStorage()
     pdf = fs.save(pdf.name,pdf)
     fileurl = fs.url(pdf)
-    val=bookdetails(bookname=bookname, author=author, publisher=publisher, year=year, pdf=fileurl)
-    val.save()
+    bookdetails.objects.filter(pk=id).update(bookname=bookname, author=author, publisher=publisher, year=year, pdf=fileurl)
     return render(request, 'adminedit.html',{'m' : 'Book was Updated Successfully'})
 
 def deletebook(request,id):
