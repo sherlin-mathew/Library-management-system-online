@@ -63,7 +63,7 @@ def managebookview(request):
 
 def adminedit(request,id):
     a=bookdetails.objects.get(id=id)
-    return render(request, 'adminedit.html',{'a':'a'})
+    return render(request, 'adminedit.html',{'a':a})
 
 def updatebook(request,id):
     bookname = request.POST['bookname']

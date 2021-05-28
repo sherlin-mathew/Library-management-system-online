@@ -57,10 +57,10 @@
                 <a href="{% url 'booklist' %}"><button type="button" class="btn btn-primary"> View </button></a>
                  </td>
                 <td>
-                <a href="{% url 'adminedit'i.id %}"><button type="button" class="btn btn-warning"> Edit</button></a>
+                <a href="adminedit/{{i.id}}"><button type="button" class="btn btn-warning"> Edit</button></a>
         </td>
         <td>
-          <a href="{% url 'managebookview'i.id %}"><button type="button" class="btn btn-danger"> Delete</button></a></td>
+          <a href="deletebook/{{i.id}}"><button type="button" class="btn btn-danger"> Delete</button></a></td>
                                   
                                 </tr>
 
