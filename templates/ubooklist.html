@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<body class="main-layout">
+
+    <div class="bs-example">
+       <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+          <a href="/" class="navbar-brand">Library Management System</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+             <span class="navbar-toggler-icon"></span>
+          </button>
+ 
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+             <div class="navbar-nav">
+ 
+             </div>
+ 
+             <div class="navbar-nav">
+                <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
+                <a href="{% url 'adminsign' %}" class="nav-item nav-link">Admin</a>
+                <a href="" class="nav-item nav-link">User</a>
+ 
+                <a href="{% url 'about' %}" class="nav-item nav-link ">About Us</a>
+                <a href="" class="nav-item nav-link active">Our Books</a>
+             </div>
+ 
+ 
+ 
+ 
+          </div>
+       </nav>
+    </div>
+</body>
+<div class="p-5">
+    <div class="container p-5">
+        <h2>Book List</h2>
+        <table class="table table-dark p-5">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sl No.</th>
+                    <th>Book Title</th>
+                    <th>Author</th>
+                    <th>Year</th>
+                    <th>Publisher</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in book_list %}
+                <tr>
+                    <th>{{i.id}}</th>
+                    <td>{{i.bookname}}</td>
+                    <td>{{i.author}}</td>
+                    <td>{{i.year}}</td>
+                    <td>{{i.publisher}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+
+{% endblock %}
