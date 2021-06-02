@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{%load static %}
+{% block content %}
+<div class="container main">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 ad">
+      <center>
+        <p style="font-size:24px;font-family:'Righteous';">Verify your email id</p>
+        <font color="red">{{msg}}</font>
+        <p style="font-size:24px;">Enter OTP sent to your email</p>
+        <form action="otpverify" method="POST">
+          {% csrf_token %}
+          <div class="form-group col-md-3 col-sm-4">
+            <input type="text" name='otp' class="form-control" id="name" aria-describedby="emailHelp" placeholder="OTP">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100px;">Verify</button><br><br>
+        </form>
+      </center>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
