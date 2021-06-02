@@ -19,7 +19,7 @@
              <div class="navbar-nav">
                 <a href="{% url 'home' %}" class="nav-item nav-link ">Home</a>
                 <a href="{% url 'adminsign' %}" class="nav-item nav-link active">Admin</a>
-                <a href="" class="nav-item nav-link">User</a>
+                <a href="{% url 'loginview' %}" class="nav-item nav-link ">User</a>
  
                 <a href="{% url 'about' %}" class="nav-item nav-link ">About Us</a>
                 <a href="{% url 'booklist' %}" class="nav-item nav-link">Our Books</a>
@@ -50,7 +50,7 @@
                             <input type="password" name="password" id="password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <a href="" class="text-info float-right">User Login here</a>
+                            <a href="{% url 'loginview' %}" class="text-info float-right">User Login here</a>
                             <br><br>
                             <button type="submit" class="btn btn-info">Sign In</button>
                         </div>
