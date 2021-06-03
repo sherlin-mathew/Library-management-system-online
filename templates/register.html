@@ -8,7 +8,7 @@
         <div id="loginview-row" class="row justify-content-center align-items-center">
             <div id="loginview-column" class="col-md-6">
                 <div id="loginview-box" class="col-md-12">
-                    <form id="loginview" class="form" action="register" method="POST">
+                    <form id="loginview" class="form" action="registerview" method="POST">
                         {% csrf_token %}
                         <h3 class="text-center text-info">Registration Form</h3>
                         <div class="form-group">
@@ -24,7 +24,7 @@
                             <input type="password" name="password" id="password" class="form-control">
                         </div>
                         <div class="form-group">
-                            <a href="{% url 'ubooklist' %}" class="text-info float-right">Login here</a>
+                            <a href="{% url 'loginview' %}" class="text-info float-right">Login here</a>
                             <br><br>
                             <button type="submit" class="btn btn-info">Register</button>
                         </div>

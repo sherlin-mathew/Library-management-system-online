@@ -97,6 +97,7 @@ def ubooklist(request):
 
 def logoutpage(request):
     return redirect('home') 
-    
 
-
+def pdfview(request):
+    book = bookdetails.objects.all()
+    return render(request, 'pdfview.html',{'book':book})     

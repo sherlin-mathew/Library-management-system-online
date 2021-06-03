@@ -13,7 +13,7 @@ class bookdetails(models.Model):
 	author = models.CharField(max_length=100,null=True)
 	year = models.CharField(max_length=1000,null=True)
 	publisher = models.CharField(max_length=200,null=True)
-	pdf = models.FileField(upload_to='books/pdfs/')
+	pdf = models.FileField()
 	class Meta:
 		db_table = "Book Table"
     

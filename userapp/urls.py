@@ -11,6 +11,8 @@ path('otpverify',views.otpverify,name='otpverify'),
 path('register_in',views.register_in,name='register_in'),
 path('ubooklist',views.ubooklist,name='ubooklist'),
 path('logoutpage',views.logoutpage,name='logoutpage'),
+path('pdfview',views.pdfview,name='pdfview'),
+
 
 
 
